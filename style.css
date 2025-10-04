@@ -1,11 +1,14 @@
+/* --- Base Styles --- */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to allow content to grow */
     margin: 0;
+    padding: 15px; /* Add some padding for small screens */
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
 }
 
 .container {
@@ -14,13 +17,15 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 90%;
-    max-width: 400px;
+    width: 100%; /* Take up full width of parent */
+    max-width: 400px; /* But don't exceed 400px */
 }
 
 h1 {
     color: #333;
+    margin-top: 0; /* Remove default top margin */
     margin-bottom: 20px;
+    font-size: 2rem; /* Set a base font size */
 }
 
 .input-group {
@@ -70,9 +75,44 @@ button:hover {
     font-size: 1.1rem;
     background-color: #e9ecef;
     font-family: 'Courier New', Courier, monospace;
+    min-width: 0; /* Important for flex items to shrink properly */
 }
 
 #copyBtn {
     border-radius: 0 5px 5px 0;
     padding: 0 15px;
+}
+
+
+/* --- Responsive Styles for Mobile --- */
+/* This block applies only to screens 480px wide or smaller */
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start; /* Align to top on mobile */
+        padding-top: 30px;
+    }
+
+    .container {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Make the title slightly smaller */
+    }
+
+    /* Stack the password input and copy button on very small screens */
+    .password-display {
+        flex-direction: column;
+    }
+
+    #passwordOutput {
+        border-radius: 5px 5px 0 0; /* Adjust border radius for stacked layout */
+        text-align: center;
+    }
+
+    #copyBtn {
+        border-radius: 0 0 5px 5px; /* Adjust border radius for stacked layout */
+        margin-top: -1px; /* Overlap the border for a cleaner look */
+        padding: 10px;
+    }
 }
