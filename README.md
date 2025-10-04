@@ -2,14 +2,14 @@
 
 A minimal, client-side password generator built with pure HTML, CSS, and JavaScript. It uses the **Web Crypto API** (`window.crypto.getRandomValues()`) to generate cryptographically strong passwords directly in your browser. No data is ever sent to a server.
 
-**[Live Demo](https://bytemeshiv.github.io/password-generator/)** 👈 *(Replace with your GitHub Pages link!)*
+**[Live Demo](https://bytemeshiv.github.io/password-generator/)** 
 
 ***
 
 ## Preview
 
 ![Screenshot of the password generator app](./screenshot.png)
-*(**Note:** Take a screenshot of your app and add it to your repository as `screenshot.png`)*
+
 
 ***
 
